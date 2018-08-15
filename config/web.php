@@ -1,4 +1,8 @@
 <?php
+if (YII_ENV_DEV) {
+    $dotenv = new Dotenv\Dotenv('../');
+    $dotenv->load();
+}
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
@@ -61,7 +65,7 @@ if (YII_ENV_DEV) {
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        //'allowedIPs' => ['127.0.0.1', '::1'],
+        'allowedIPs' => ['127.0.0.1', '::1', '172.21.0.1'],
     ];
 
     $config['bootstrap'][] = 'gii';
@@ -69,6 +73,7 @@ if (YII_ENV_DEV) {
         'class' => 'yii\gii\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
         //'allowedIPs' => ['127.0.0.1', '::1'],
+        'allowedIPs' => ['127.0.0.1', '::1', '172.21.0.1'],
     ];
 }
 

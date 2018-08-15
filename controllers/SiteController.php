@@ -61,6 +61,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        Yii::$app->db->createCommand('SELECT now()')->execute();
         return $this->render('index');
     }
 

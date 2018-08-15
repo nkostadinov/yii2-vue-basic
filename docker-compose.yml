@@ -1,9 +1,34 @@
-version: '2'
+version: "3.1"
+
 services:
   php:
     image: yiisoftware/yii2-php:7.1-apache
     volumes:
-      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+#      - ~/.composer-docker/cache:/root/.composer/cache:delegated
       - ./:/app:delegated
     ports:
       - '8000:80'
+    networks:
+    - app_net
+    links:
+      - db
+    depends_on:
+      - db
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "${MYSQL_PASSWORD}"
+      MYSQL_DATABASE: minipos
+    networks:
+    - app_net
+    ports:
+      - '3307:3306'
+    volumes:
+      - "${MYSQL_DATA_DIR}:/var/lib/mysql"
+      - "${MYSQL_LOG_DIR}:/var/log/mysql"
+
+networks:
+  app_net:
+    driver: bridge
