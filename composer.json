@@ -14,11 +14,15 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "php": ">=5.4.0",
+        "php": ">=7.1.0",
         "yiisoft/yii2": "~2.0.14",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
-        "vlucas/phpdotenv": "^2.5"
+
+        "vlucas/phpdotenv": "^2.5",
+        "nkostadinov/yii2-user": "dev-master",
+        "nkostadinov/yii2-taxonomy": "dev-master",
+        "innologica/yii2-insight-rbac": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -64,6 +68,10 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "vcs",
+            "url": "git@bitbucket.org:innologica/yii2-insight-rbac.git"
         }
     ]
 }

@@ -9,23 +9,41 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
+    'name' => getenv('APPLICATION_NAME'),
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => [
+        'log',
+        function () {
+            return Yii::$app->getModule('user');
+        },
+    ],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'components' => [
         'request' => [
-            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'czlWO0CWXothhsm8lzDVEDbavqAVDu1n',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ],
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'class' => nkostadinov\user\components\User::class,
+            'identityClass' => app\models\User::class,
             'enableAutoLogin' => true,
+            'passwordStrengthConfig' => [
+                'min' => 6,
+                'upper' => 0,
+                'lower' => 0,
+                'digit' => 0,
+                'special' => 0,
+                'hasUser' => false,
+                'hasEmail' => true
+            ],
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -47,17 +65,35 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [
-            ],
+            'rules' => [],
         ],
-        */
     ],
     'params' => $params,
+    'modules' => [
+        'user' => [
+            'class' => \nkostadinov\user\Module::class,
+        ],
+        'api' => [
+            'class' => \app\modules\api\Module::class,
+        ],
+    ],
+    'on beforeRequest' => function () {
+        if (!Yii::$app->user->isGuest && (
+                strpos($_SERVER['REQUEST_URI'], '/gii') !== 0 &&
+                strpos($_SERVER['REQUEST_URI'], '/api') !== 0 &&
+                strpos($_SERVER['REQUEST_URI'], '/debug') !== 0
+            )) {
+            Yii::$app->catchAll = [
+                'site/index',
+            ];
+        }
+    },
 ];
+
+$config = \yii\helpers\ArrayHelper::merge($config, require('common.php'));
 
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
@@ -65,7 +101,7 @@ if (YII_ENV_DEV) {
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        'allowedIPs' => ['127.0.0.1', '::1', '172.21.0.1'],
+        'allowedIPs' => [$_SERVER['REMOTE_ADDR']],
     ];
 
     $config['bootstrap'][] = 'gii';
@@ -73,7 +109,7 @@ if (YII_ENV_DEV) {
         'class' => 'yii\gii\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
         //'allowedIPs' => ['127.0.0.1', '::1'],
-        'allowedIPs' => ['127.0.0.1', '::1', '172.21.0.1'],
+        'allowedIPs' => [$_SERVER['REMOTE_ADDR']],
     ];
 }
 

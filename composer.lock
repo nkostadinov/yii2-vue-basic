@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "227c03fde0193087478a8590f9f413eb",
+    "content-hash": "7f33f50890e8c956bea8b65650b0cdf8",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -215,6 +215,133 @@
             "time": "2018-02-23T01:58:20+00:00"
         },
         {
+            "name": "innologica/yii2-insight-rbac",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@bitbucket.org:innologica/yii2-insight-rbac.git",
+                "reference": "c1f1f6ad60453c06c3d8b942aa2087b2204ad650"
+            },
+            "require": {
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-bootstrap": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "insight\\rbac\\": ""
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Nikola Kostadinov",
+                    "email": "nkostadinov@innologica.com"
+                }
+            ],
+            "description": "rbac manager with client/server support for multisite user management. ",
+            "keywords": [
+                "extension",
+                "insight",
+                "rbac",
+                "yii2"
+            ],
+            "time": "2017-08-04T13:54:33+00:00"
+        },
+        {
+            "name": "nkostadinov/yii2-taxonomy",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nkostadinov/yii2-taxonomy.git",
+                "reference": "35a2e46aa23307b2580d8635c9bf337e0c438b74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nkostadinov/yii2-taxonomy/zipball/35a2e46aa23307b2580d8635c9bf337e0c438b74",
+                "reference": "35a2e46aa23307b2580d8635c9bf337e0c438b74",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "require-dev": {
+                "yiisoft/yii2-codeception": "~2.0.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "nkostadinov\\taxonomy\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikola Kostadinov",
+                    "email": "nikolakk@gmail.com"
+                }
+            ],
+            "description": "Yii2 Taxonomy",
+            "keywords": [
+                "extension",
+                "taxonomy",
+                "yii2"
+            ],
+            "time": "2017-05-23T05:55:21+00:00"
+        },
+        {
+            "name": "nkostadinov/yii2-user",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nkostadinov/yii2-user.git",
+                "reference": "ce38c9dfe28735c3cbf13ff82b685e1fbea08619"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nkostadinov/yii2-user/zipball/ce38c9dfe28735c3cbf13ff82b685e1fbea08619",
+                "reference": "ce38c9dfe28735c3cbf13ff82b685e1fbea08619",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-authclient": "*",
+                "yiisoft/yii2-bootstrap": "~2.0.3"
+            },
+            "require-dev": {
+                "yiisoft/yii2-codeception": "~2.0.0",
+                "yiisoft/yii2-swiftmailer": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "nkostadinov\\user\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Nikola Kostadinov",
+                    "email": "nikolakk@gmail.com"
+                }
+            ],
+            "description": "User management functionalities.",
+            "keywords": [
+                "extension",
+                "user",
+                "yii2"
+            ],
+            "time": "2018-08-06T12:01:33+00:00"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.4.12",
             "source": {
@@ -419,6 +546,58 @@
             "time": "2018-03-21T18:36:53+00:00"
         },
         {
+            "name": "yiisoft/yii2-authclient",
+            "version": "2.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-authclient.git",
+                "reference": "ff826241c231d8f768f4cb58577d6956fdbc5fab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-authclient/zipball/ff826241c231d8f768f4cb58577d6956fdbc5fab",
+                "reference": "ff826241c231d8f768f4cb58577d6956fdbc5fab",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2-httpclient": "~2.0.5"
+            },
+            "suggest": {
+                "spomky-labs/jose": "required for JWS,JWT or JWK related flows like OpenIDConnect"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\authclient\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Klimov",
+                    "email": "klimov.paul@gmail.com"
+                }
+            ],
+            "description": "External authentication via OAuth and OpenID for the Yii framework",
+            "keywords": [
+                "OpenID Connect",
+                "OpenId",
+                "api",
+                "auth",
+                "oauth",
+                "yii2"
+            ],
+            "time": "2018-02-07T21:12:40+00:00"
+        },
+        {
             "name": "yiisoft/yii2-bootstrap",
             "version": "2.0.8",
             "source": {
@@ -531,6 +710,53 @@
                 "yii2"
             ],
             "time": "2018-07-05T15:44:47+00:00"
+        },
+        {
+            "name": "yiisoft/yii2-httpclient",
+            "version": "2.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-httpclient.git",
+                "reference": "95fc8a943e8abb86e3d0f4eace6f6d1f4ba4f028"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-httpclient/zipball/95fc8a943e8abb86e3d0f4eace6f6d1f4ba4f028",
+                "reference": "95fc8a943e8abb86e3d0f4eace6f6d1f4ba4f028",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "~2.0.13"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\httpclient\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Klimov",
+                    "email": "klimov.paul@gmail.com"
+                }
+            ],
+            "description": "HTTP client extension for the Yii framework",
+            "keywords": [
+                "curl",
+                "http",
+                "httpclient",
+                "yii2"
+            ],
+            "time": "2018-02-13T15:11:30+00:00"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
@@ -3181,7 +3407,11 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "nkostadinov/yii2-user": 20,
+        "nkostadinov/yii2-taxonomy": 20,
+        "innologica/yii2-insight-rbac": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
