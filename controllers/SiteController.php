@@ -61,7 +61,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        Yii::$app->db->createCommand('SELECT now()')->execute();
+        if(!Yii::$app->user->isGuest) {
+            $this->layout = 'vue';
+            return $this->render('vue');
+        }
         return $this->render('index');
     }
 

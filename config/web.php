@@ -35,6 +35,7 @@ $config = [
             'class' => nkostadinov\user\components\User::class,
             'identityClass' => app\models\User::class,
             'enableAutoLogin' => true,
+            'allowUncofirmedLogin' => true,
             'passwordStrengthConfig' => [
                 'min' => 6,
                 'upper' => 0,
