@@ -1,0 +1,138 @@
+@import "variables";
+@import "keyframes";
+
+
+$transition-duration: 0.3s;
+//distance in px that the translate transition moves
+$translate-offset: 11px;
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  @extend .pt-page-scaleUp;
+  animation-duration: 0.15s;
+}
+
+.slide-fade-leave-active {
+  animation-duration: 0.15s;
+  @extend .pt-page-scaleDown;
+}
+
+.slide-fade-enter, .slide-fade-leave-to
+{
+  position: absolute; //in order not to stack the two divs
+}
+
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  //position: absolute;
+}
+
+
+//button animation
+.icon-wrapper {
+  position:relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+
+  i {
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+  }
+}
+
+//translate fade (right to left)
+.translate-fade-enter-active, .translate-fade-leave-active {
+  transition: all $transition-duration;
+  transition-timing-function: $timing-function;
+}
+.translate-fade-enter, .translate-fade-leave-active {
+  opacity: 0;
+}
+.translate-fade-enter {
+  transform: translateX($translate-offset);
+}
+.translate-fade-leave-active {
+  transform: translateX($translate-offset);
+}
+
+//translate fade (top to down)
+.translate-fade-down-enter-active, .translate-fade-down-leave-active {
+  transition: all $transition-duration;
+  transition-timing-function: $timing-function;
+}
+.translate-fade-down-enter, .translate-fade-down-leave-active {
+  opacity: 0;
+}
+.translate-fade-down-enter, .translate-fade-down-leave-to {
+  position: absolute;
+}
+
+.translate-fade-down-enter {
+  transform: translateY(-$translate-offset);
+}
+.translate-fade-down-leave-active {
+  transform: translateY($translate-offset);
+}
+
+//slide down
+.slide-down-enter-active, .slide-down-leave-active {
+  transition: opacity 0.4s, max-height 0.3s;
+  max-height: 300px;
+}
+.slide-down-enter, .slide-down-leave-to {
+  opacity: 0;
+  max-height: 0;
+}
+
+
+//buton rotate Y
+.translate-rotate-enter-active, .translate-rotate-leave-active {
+  transition: all $transition-duration;
+}
+.translate-rotate-enter, .translate-rotate-leave-active {
+  opacity: 0;
+}
+.translate-rotate-enter {
+  transform: rotateY(180deg);
+}
+.translate-rotate-leave-active {
+  transform: rotateY(-180deg);
+}
+
+
+//blink animation
+.blink {
+  animation: blink-animation 0.5s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    color: white;
+    background-color: $green;
+  }
+}
+
+.blink_1s {
+  animation: blinker 0.5s linear 3;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+//pulsing animation
+@keyframes pulse_animation {
+  0% { transform: scale(1); }
+  30% { transform: scale(1); }
+  40% { transform: scale(1.2); }
+  50% { transform: scale(1); }
+  60% { transform: scale(1); }
+  70% { transform: scale(1.1); }
+  80% { transform: scale(1); }
+  100% { transform: scale(1); }
+}

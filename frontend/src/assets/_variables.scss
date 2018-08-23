@@ -1,0 +1,5 @@
+$text-secondary-color: mix(#000305, #fff, 40%);
+
+//transition
+$transition-duration: 0.25s;
+$timing-function: cubic-bezier(.53,2,.36,.85);  //slingshot effect

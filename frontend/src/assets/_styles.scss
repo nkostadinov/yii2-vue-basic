@@ -1,0 +1,27 @@
+#nav {
+  width: 240px;
+  margin-top: 54px;
+
+  transition: .25s cubic-bezier(.1,.57,.1,1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 904;
+  max-height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  padding: 0 0 100px;
+}
+
+.main {
+  padding-left: 240px;
+  width: 100%;
+}
+
+.single-line-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100%;
+  white-space: nowrap;
+}

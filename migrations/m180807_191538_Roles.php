@@ -15,6 +15,10 @@ class m180807_191538_Roles extends Migration
      */
     public function safeUp()
     {
+        if ($this->db->getTableSchema('user', true) === null) {
+            throw new \yii\base\InvalidConfigException('Please migrate user and RBAC modules first');
+        }
+
         $role = Yii::$app->authManager->createRole('Administrator');
         Yii::$app->authManager->add($role);
         Yii::$app->authManager->assign($role, 1);

@@ -1,29 +1,55 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="app">
+        <!-- As a link -->
+        <nav class="navbar navbar-light bg-light shadow-sm">
+            <router-link class="navbar-brand" to="/">{{application_name}}</router-link>
+            <div>
+                {{$user.name}}
+                <a href="/logout">Logout</a>
+            </div>
+        </nav>
+        <div class="d-flex content">
+            <div id="nav" class="shadow pt-2">
+                <div class="py-2">
+                    <ul class="nav flex-column">
+                        <li class="nav-item" v-if="$user.isAdmin">
+                            <router-link class="nav-link" to="/users">Users</router-link>
+                        </li>
+                        <li class="nav-item" v-if="$user.isAdmin">
+                            <router-link class="nav-link" to="/rbac">Rbac</router-link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class=" main">
+                <div class="container my-3">
+                    <transition name="translate-fade-down">
+                        <router-view/>
+                    </transition>
+                </div>
+            </div>
+        </div>
+        <!--modals container-->
+        <modals-container></modals-container>
     </div>
-    <router-view/>
-  </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+  import ModalsContainer from '@/components/ModalsContainer'
+
+  export default {
+    components: {
+      ModalsContainer
+    },
+    data () {
+      return {
+        // eslint-disable-next-line
+        application_name
+      }
+    },
   }
-}
+</script>
+
+<style lang="scss">
+    @import "assets/bootstrap";
 </style>

@@ -37,6 +37,7 @@ $config = [
             'class' => 'yii\console\controllers\MigrateController',
             'migrationNamespaces' => ['app\migrations'],
             'migrationPath' => [
+                '@nkostadinov/taxonomy/migrations',
                 '@yii/rbac/migrations',
                 '@vendor/nkostadinov/yii2-user/migrations',
                 'app/migrations',

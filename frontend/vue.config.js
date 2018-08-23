@@ -1,7 +1,7 @@
 var ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
-  filenameHashing: false,
+  // filenameHashing: false,
 
   pwa: {
     name: 'Minipos',
@@ -15,7 +15,7 @@ module.exports = {
   baseUrl: undefined,
   outputDir: '/dist',
   assetsDir: undefined,
-  runtimeCompiler: undefined,
+  runtimeCompiler: true,
   productionSourceMap: undefined,
   parallel: undefined,
   css: {

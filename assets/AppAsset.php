@@ -42,12 +42,12 @@ class AppAsset extends AssetBundle
             $this->depends = [];
             $this->css = [];
 //            $this->js[] = YII_ENV_DEV ? 'http://localhost:8080/app.js' : '';
-            if(!YII_ENV_DEV)
-                $this->js[] = $this->Vue('chunk-vendors.js');
+//            if(!YII_ENV_DEV)
+//                $this->js[] = $this->Vue('chunk-vendors.js');
 
+//            $this->js[] = $this->Vue('chunk-vendors.js');
             $this->js[] = $this->Vue('app.js');
-            $this->js[] = $this->Vue('chunk-vendors.js');
-            $this->css[] = $this->Vue('app.css');
+//            $this->css[] = $this->Vue('app.css');
         }
     }
 

@@ -7,6 +7,7 @@
 
 namespace app\models;
 
+use app\exceptions\InvalidRoleException;
 use Yii;
 
 class User extends \nkostadinov\user\models\User
@@ -20,7 +21,6 @@ class User extends \nkostadinov\user\models\User
         unset($fields['password_hash']);
         unset($fields['auth_key']);
         $fields['role'] = 'role';
-        $fields['company'] = 'company';
 
         return $fields;
     }
@@ -28,16 +28,7 @@ class User extends \nkostadinov\user\models\User
     public function rules()
     {
         $rules = parent::rules();
-        $rules[] = [['company_id', 'role'], 'safe'];
         return $rules;
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getCompany()
-    {
-        return $this->hasOne(Company::class, ['id' => 'company_id']);
     }
 
     public function getRole() {
@@ -48,12 +39,19 @@ class User extends \nkostadinov\user\models\User
         }
     }
 
+    /**
+     * @param $value
+     * @throws InvalidRoleException
+     * @throws \Exception
+     */
     public function setRole($value) {
         $role = Yii::$app->authManager->getRole($this->role);
         if($role)
             Yii::$app->authManager->revoke($role, $this->id);
 
         $role = Yii::$app->authManager->getRole($value);
+        if(!$role)
+            throw new InvalidRoleException();
         Yii::$app->authManager->assign($role, $this->id);
     }
 }

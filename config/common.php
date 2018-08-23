@@ -9,5 +9,6 @@
 return [
     'components' => [
         'authManager' => \insight\rbac\managers\BaseAuthManager::class,
+        'taxonomy' => \nkostadinov\taxonomy\Taxonomy::class,
     ]
 ];

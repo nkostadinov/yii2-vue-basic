@@ -80,11 +80,16 @@ $config = [
         'api' => [
             'class' => \app\modules\api\Module::class,
         ],
+        'taxonomy' => [
+            'class' => \nkostadinov\taxonomy\Module::class
+        ],
     ],
     'on beforeRequest' => function () {
         if (!Yii::$app->user->isGuest && (
                 strpos($_SERVER['REQUEST_URI'], '/gii') !== 0 &&
                 strpos($_SERVER['REQUEST_URI'], '/api') !== 0 &&
+                strpos($_SERVER['REQUEST_URI'], '/logout') !== 0 &&
+                strpos($_SERVER['REQUEST_URI'], '/taxonomy') !== 0 &&
                 strpos($_SERVER['REQUEST_URI'], '/debug') !== 0
             )) {
             Yii::$app->catchAll = [
