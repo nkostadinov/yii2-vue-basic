@@ -2,7 +2,11 @@ var ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
   // filenameHashing: false,
-
+  devServer: {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+  },
   pwa: {
     name: 'Minipos',
   },
@@ -12,10 +16,10 @@ module.exports = {
     ],
   },
 
-  baseUrl: undefined,
+  baseUrl: 'http://localhost:8080/',
   outputDir: '/dist',
   assetsDir: undefined,
-  runtimeCompiler: true,
+  runtimeCompiler: undefined,
   productionSourceMap: undefined,
   parallel: undefined,
   css: {
