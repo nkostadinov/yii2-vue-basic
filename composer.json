@@ -1,16 +1,13 @@
 {
-    "name": "yiisoft/yii2-app-basic",
+    "name": "nkostadinov/yii2-vue-basic",
     "description": "Yii 2 Basic Project Template",
     "keywords": ["yii2", "framework", "basic", "project template"],
-    "homepage": "http://www.yiiframework.com/",
+    "homepage": "https://nikolakk.wordpress.com/",
     "type": "project",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
-        "forum": "http://www.yiiframework.com/forum/",
-        "wiki": "http://www.yiiframework.com/wiki/",
-        "irc": "irc://irc.freenode.net/yii",
-        "source": "https://github.com/yiisoft/yii2"
+        "issues": "https://nkostadinov/yii2-vue-basic/issues?state=open",
+        "source": "https://github.com/nkostadinov/yii2-vue-basic"
     },
     "minimum-stability": "stable",
     "require": {
