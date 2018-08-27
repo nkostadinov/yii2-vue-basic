@@ -9,17 +9,11 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
-    'name' => getenv('APPLICATION_NAME'),
-    'basePath' => dirname(__DIR__),
     'bootstrap' => [
         'log',
         function () {
             return Yii::$app->getModule('user');
         },
-    ],
-    'aliases' => [
-        '@bower' => '@vendor/bower-asset',
-        '@npm' => '@vendor/npm-asset',
     ],
     'components' => [
         'request' => [
@@ -27,9 +21,6 @@ $config = [
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
             ],
-        ],
-        'cache' => [
-            'class' => 'yii\caching\FileCache',
         ],
         'user' => [
             'class' => nkostadinov\user\components\User::class,
@@ -56,16 +47,6 @@ $config = [
             // for the mailer to send real emails.
             'useFileTransport' => true,
         ],
-        'log' => [
-            'traceLevel' => YII_DEBUG ? 3 : 0,
-            'targets' => [
-                [
-                    'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
-                ],
-            ],
-        ],
-        'db' => $db,
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
