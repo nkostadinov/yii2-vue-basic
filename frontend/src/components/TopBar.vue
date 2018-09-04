@@ -1,9 +1,9 @@
 <template>
-    <nav class="navbar navbar-dark shadow-sm">
-        <div>
+    <nav class="navbar navbar-dark bg-primary shadow-sm">
+        <div class="d-flex align-items-center">
             <a
                     @click="toggleSidebar"
-                    class="pl-0 btn-lg mr-2 toggle-sidebar"
+                    class="btn text-light mr-2 toggle-sidebar"
                     href="javascript:void(0)"
             >
                 <i class="fa fa-bars"></i>
@@ -13,8 +13,8 @@
             </router-link>
         </div>
         <div class="d-flex align-items-center">
-            <span>{{$user.name}}</span>
-            <a href="/logout" class="ml-2" title="Logout">
+            <span class="text-light">{{$user.name}}</span>
+            <a href="/logout" class="btn btn-outline-light border-0 ml-2" title="Logout">
                 <i class="fas fa-sign-out-alt fa-lg"></i>
             </a>
         </div>
