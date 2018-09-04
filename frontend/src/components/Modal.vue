@@ -6,7 +6,7 @@
                     <slot name="modal-header">
                         <div class="modal-header" v-if="title">
                             <h5 class="modal-title">{{title}}</h5>
-                            <a v-if="close_button" class="close" aria-label="Close" @click.stop="$emit('close')">
+                            <a v-if="closeButton" class="close" aria-label="Close" @click.stop="$emit('close')">
                                 <span aria-hidden="true">×</span>
                             </a>
                         </div>
@@ -19,13 +19,12 @@
                             <button
                                     v-if="saveButton"
                                     type="button"
-                                    class="btn btn-primary"
                                     @click="$emit('save')"
-                                    :class="{ loading: saving }"
+                                    :class="{ [saveButtonClass]: true,  loading: saving }"
                                    >{{saveButtonTitle}}
                             </button>
                             <button type="button" class="btn btn-outline-secondary" data-dismiss="modal"
-                                    @click.stop="$emit('close')">Close
+                                    @click.stop="$emit('close')">{{closeButtonTitle}}
                             </button>
                         </div>
                     </slot>
@@ -47,13 +46,21 @@
         type: Boolean,
         default: true
       },
-      close_button: {
+      closeButton: {
         type: Boolean,
         default: true
+      },
+      closeButtonTitle: {
+        type: String,
+        default: 'Close'
       },
       saveButton: {
         type: Boolean,
         default: true
+      },
+      saveButtonClass: {
+        type: String,
+        default: 'btn btn-primary'
       },
       saveButtonTitle: {
         type: String,

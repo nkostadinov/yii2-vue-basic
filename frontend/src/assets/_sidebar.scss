@@ -1,0 +1,26 @@
+@import "variables";
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 240px;
+    margin-top: 56px;
+
+    transition: .25s;
+    z-index: 904;
+    max-height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    padding: 0 0 100px;
+
+    &.collapsed {
+        left: -100%;
+    }
+}
+
+.collapsed .toggle-sidebar {
+ color: #2e6da4;
+}
