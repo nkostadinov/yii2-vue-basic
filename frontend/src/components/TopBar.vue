@@ -10,7 +10,6 @@
             </a>
             <router-link class="navbar-brand" to="/">
                 {{application_name}}
-                <small class="text-muted">{{$user.company.name}}/{{$user.company.pid}}</small>
             </router-link>
         </div>
         <div class="d-flex align-items-center">
@@ -38,12 +37,3 @@
     },
   }
 </script>
-
-<style lang="scss" scoped>
-    @import "../assets/pallete";
-
-    .navbar-dark {
-        background-color: $color1; //rgba($color3, 0.6);
-        color: $color4;
-    }
-</style>

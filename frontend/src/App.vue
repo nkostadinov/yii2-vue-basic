@@ -1,26 +1,8 @@
 <template>
     <div id="app">
-        <!-- As a link -->
-        <nav class="navbar navbar-light bg-light shadow-sm">
-            <router-link class="navbar-brand" to="/">{{application_name}}</router-link>
-            <div>
-                {{$user.name}}
-                <a href="/logout">Logout</a>
-            </div>
-        </nav>
+        <top-bar></top-bar>
         <div class="d-flex content">
-            <div id="nav" class="shadow pt-2">
-                <div class="py-2">
-                    <ul class="nav flex-column">
-                        <li class="nav-item" v-if="$user.isAdmin">
-                            <router-link class="nav-link" to="/users">Users</router-link>
-                        </li>
-                        <li class="nav-item" v-if="$user.isAdmin">
-                            <router-link class="nav-link" to="/rbac">Rbac</router-link>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <side-bar :state="state"></side-bar>
             <div class=" main">
                 <div class="container my-3">
                     <transition name="translate-fade-down">
@@ -36,20 +18,32 @@
 
 <script>
   import ModalsContainer from '@/components/ModalsContainer'
+  import SideBar from '@/components/SideBar'
+  import TopBar from "@/components/TopBar";
 
   export default {
     components: {
+      TopBar,
+      SideBar,
       ModalsContainer
     },
     data () {
       return {
-        // eslint-disable-next-line
-        application_name
+        state: 'fixed'
       }
     },
+    created () {
+      this.$bus.$on('toggle-sidebar', () => {
+        this.state = this.state === 'fixed' ? 'collapsed' : 'fixed'
+      })
+    }
   }
 </script>
 
 <style lang="scss">
+    @import url('//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&subset=all');
+    @import url('//fonts.googleapis.com/css?family=Merriweather:300,400,700&subset=all');
+    @import url('//fonts.googleapis.com/css?family=Roboto&subset=all');
+
     @import "assets/bootstrap";
 </style>

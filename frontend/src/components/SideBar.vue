@@ -34,17 +34,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-    @import "../assets/variables";
-
-    .nav-item {
-        &:hover {
-            background-color: rgba($blue, 0.05);
-        }
-    }
-
-    .nav-link.active {
-        background-color: rgba($blue, 0.1);
-    }
-</style>
