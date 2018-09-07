@@ -5,7 +5,7 @@ const state = {
   /*global user:true*/
   /*eslint no-undef: "error"*/
   user,
-  dateFormat: 'YYYY-MM-DD',
+  dateFormat: 'YYYY-MM-DD HH:mm',
 
   ...users.state,
   ...rbac.state,
