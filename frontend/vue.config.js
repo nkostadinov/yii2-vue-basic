@@ -12,12 +12,14 @@ module.exports = {
   },
   configureWebpack: {
     plugins: [
-      new ManifestPlugin()
+      new ManifestPlugin({
+        writeToFileEmit: true
+      })
     ],
   },
 
   baseUrl: 'http://localhost:8080/',
-  outputDir: '/dist',
+  outputDir: '../web/dist',
   assetsDir: undefined,
   runtimeCompiler: undefined,
   productionSourceMap: undefined,
