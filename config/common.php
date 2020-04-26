@@ -14,7 +14,7 @@ return [
         '@npm' => '@vendor/npm-asset',
     ],
     'components' => [
-        'authManager' => \insight\rbac\managers\BaseAuthManager::class,
+        'authManager' => \yii\rbac\DbManager::class,
         'taxonomy' => \nkostadinov\taxonomy\Taxonomy::class,
         'cache' => [
             'class' => 'yii\caching\FileCache',

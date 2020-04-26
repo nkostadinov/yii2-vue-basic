@@ -9,7 +9,7 @@ services:
     environment:
       PHP_ENABLE_XDEBUG: "${PHP_ENABLE_XDEBUG}"
     ports:
-    - '8000:80'
+    - '8080:80'
     networks:
     - app_net
     links:

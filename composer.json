@@ -18,8 +18,7 @@
 
         "vlucas/phpdotenv": "^2.5",
         "nkostadinov/yii2-user": "dev-master",
-        "nkostadinov/yii2-taxonomy": "dev-master",
-        "innologica/yii2-insight-rbac": "dev-master"
+        "nkostadinov/yii2-taxonomy": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -65,10 +64,6 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        },
-        {
-            "type": "vcs",
-            "url": "git@bitbucket.org:innologica/yii2-insight-rbac.git"
         }
     ]
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f33f50890e8c956bea8b65650b0cdf8",
+    "content-hash": "003074589d2c46143603def82c159856",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -74,7 +74,7 @@
             "version": "v1.3.2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:bestiejs/punycode.js.git",
+                "url": "https://github.com/bestiejs/punycode.js.git",
                 "reference": "38c8d3131a82567bfef18da09f7f4db68c84f8a3"
             },
             "dist": {
@@ -90,7 +90,7 @@
             "version": "2.0.7.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:yiisoft/jquery-pjax.git",
+                "url": "https://github.com/yiisoft/jquery-pjax.git",
                 "reference": "aef7b953107264f00234902a3880eb50dafc48be"
             },
             "dist": {
@@ -215,57 +215,21 @@
             "time": "2018-02-23T01:58:20+00:00"
         },
         {
-            "name": "innologica/yii2-insight-rbac",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@bitbucket.org:innologica/yii2-insight-rbac.git",
-                "reference": "c1f1f6ad60453c06c3d8b942aa2087b2204ad650"
-            },
-            "require": {
-                "yiisoft/yii2": "*",
-                "yiisoft/yii2-bootstrap": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "insight\\rbac\\": ""
-                }
-            },
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Nikola Kostadinov",
-                    "email": "nkostadinov@innologica.com"
-                }
-            ],
-            "description": "rbac manager with client/server support for multisite user management. ",
-            "keywords": [
-                "extension",
-                "insight",
-                "rbac",
-                "yii2"
-            ],
-            "time": "2017-08-04T13:54:33+00:00"
-        },
-        {
             "name": "nkostadinov/yii2-taxonomy",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nkostadinov/yii2-taxonomy.git",
-                "reference": "35a2e46aa23307b2580d8635c9bf337e0c438b74"
+                "reference": "b82396ce04db797310c965704e0eef31e335d95c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nkostadinov/yii2-taxonomy/zipball/35a2e46aa23307b2580d8635c9bf337e0c438b74",
-                "reference": "35a2e46aa23307b2580d8635c9bf337e0c438b74",
+                "url": "https://api.github.com/repos/nkostadinov/yii2-taxonomy/zipball/b82396ce04db797310c965704e0eef31e335d95c",
+                "reference": "b82396ce04db797310c965704e0eef31e335d95c",
                 "shasum": ""
             },
             "require": {
-                "yiisoft/yii2": "*"
+                "yiisoft/yii2": "~2.0.15.1"
             },
             "require-dev": {
                 "yiisoft/yii2-codeception": "~2.0.0"
@@ -292,7 +256,7 @@
                 "taxonomy",
                 "yii2"
             ],
-            "time": "2017-05-23T05:55:21+00:00"
+            "time": "2018-10-05T08:11:06+00:00"
         },
         {
             "name": "nkostadinov/yii2-user",
@@ -300,12 +264,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nkostadinov/yii2-user.git",
-                "reference": "ce38c9dfe28735c3cbf13ff82b685e1fbea08619"
+                "reference": "a79b471ceec17338b3fa1d7e1baa5c1ee86cd483"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nkostadinov/yii2-user/zipball/ce38c9dfe28735c3cbf13ff82b685e1fbea08619",
-                "reference": "ce38c9dfe28735c3cbf13ff82b685e1fbea08619",
+                "url": "https://api.github.com/repos/nkostadinov/yii2-user/zipball/a79b471ceec17338b3fa1d7e1baa5c1ee86cd483",
+                "reference": "a79b471ceec17338b3fa1d7e1baa5c1ee86cd483",
                 "shasum": ""
             },
             "require": {
@@ -339,7 +303,7 @@
                 "user",
                 "yii2"
             ],
-            "time": "2018-08-06T12:01:33+00:00"
+            "time": "2019-03-27T07:09:25+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -975,6 +939,7 @@
                 "functional testing",
                 "unit testing"
             ],
+            "abandoned": true,
             "time": "2018-08-01T07:46:24+00:00"
         },
         {
@@ -3409,13 +3374,12 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "nkostadinov/yii2-user": 20,
-        "nkostadinov/yii2-taxonomy": 20,
-        "innologica/yii2-insight-rbac": 20
+        "nkostadinov/yii2-taxonomy": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.4.0"
+        "php": ">=7.0.0"
     },
     "platform-dev": []
 }
