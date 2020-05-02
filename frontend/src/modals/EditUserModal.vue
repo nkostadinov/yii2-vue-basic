@@ -5,7 +5,7 @@
             @close="show = false"
             title="Create user"
             @save="save"
-            :modalClass="{ 'modal-xl': true }"
+            :modalClass="{ 'modal-md': true }"
     >
         <div>
             <div class="form-group">

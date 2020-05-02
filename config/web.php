@@ -77,7 +77,7 @@ $config = [
 
 $config = \yii\helpers\ArrayHelper::merge($config, require('common.php'));
 
-if (YII_ENV_DEV) {
+if (YII_DEBUG) {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [

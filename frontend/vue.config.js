@@ -10,7 +10,14 @@ module.exports = {
     writeToDisk: true
   },
   pwa: {
-    name: 'Minipos',
+    name: process.env.APPLICATION_NAME,
+    manifestPath: '../manifest.json',
+    workboxOptions: {
+      // swSrc is required in InjectManifest mode.
+      // swDest: '../service-worker.js',
+      // ...other Workbox options...
+    }
+
   },
   configureWebpack: {
     plugins: [

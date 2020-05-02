@@ -43,7 +43,7 @@ class AppAsset extends AssetBundle
             $this->css = [];
             $this->js[] = $this->Vue('chunk-vendors.js');
             $this->js[] = $this->Vue('app.js');
-            $this->css[] = $this->Vue('app.css');
+//            $this->css[] = $this->Vue('app.css');
         }
     }
 
