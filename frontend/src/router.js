@@ -1,12 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './components/Home'
-import Users from '@/pages/Users'
-import Rbac from '@/pages/Rbac'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   linkActiveClass: 'active',
   // base: process.env.BASE_URL,
@@ -14,17 +11,12 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: () => import('@/components/Home')
     },
     {
       path: '/users',
       name: 'users',
-      component: Users
-    },
-    {
-      path: '/rbac',
-      name: 'rbac',
-      component: Rbac
+      component: () => import('@/pages/Users')
     },
     {
       path: '/dashboard',
@@ -33,3 +25,11 @@ export default new Router({
     },
   ]
 })
+
+router.afterEach(to => {
+  if(to.meta && to.meta.title) {
+    document.title = to.meta.title
+  }
+})
+
+export default router

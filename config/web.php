@@ -1,9 +1,4 @@
 <?php
-if (YII_ENV_DEV) {
-    $dotenv = new Dotenv\Dotenv('../');
-    $dotenv->load();
-}
-
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
-Vue.component('modal', require('@/components/Modal').default)
-Vue.component('dropdown', require('@/components/Dropdown').default)
+Vue.component('modal', require('@innologica/vue-stackable-modal').default)
+Vue.component('dropdown', require('@innologica/vue-dropdown-menu').default)
 
 //Toast messages
 import Toasted from 'vue-toasted'

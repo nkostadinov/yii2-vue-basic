@@ -41,13 +41,9 @@ class AppAsset extends AssetBundle
         if(!Yii::$app->user->isGuest) {
             $this->depends = [];
             $this->css = [];
-//            $this->js[] = YII_ENV_DEV ? 'http://localhost:8080/app.js' : '';
-//            if(!YII_ENV_DEV)
-//                $this->js[] = $this->Vue('chunk-vendors.js');
-
-//            $this->js[] = $this->Vue('chunk-vendors.js');
+            $this->js[] = $this->Vue('chunk-vendors.js');
             $this->js[] = $this->Vue('app.js');
-//            $this->css[] = $this->Vue('app.css');
+            $this->css[] = $this->Vue('app.css');
         }
     }
 
@@ -55,10 +51,10 @@ class AppAsset extends AssetBundle
         $manifest = Yii::getAlias($this->manifestPath);
         if(file_exists($manifest)) {
             $data = Json::decode(file_get_contents($manifest));
-            if($data[$filename])
-                return '/dist/'.$data[$filename];
+            if(isset($data[$filename]))
+                return $data[$filename];
         }
 
-        return (YII_ENV_DEV ? 'http://localhost:8080/' : '') . $filename;
+        return false;
     }
 }

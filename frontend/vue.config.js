@@ -6,6 +6,8 @@ module.exports = {
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
+    disableHostCheck: true,
+    writeToDisk: true
   },
   pwa: {
     name: 'Minipos',
@@ -17,8 +19,7 @@ module.exports = {
       })
     ],
   },
-
-  baseUrl: 'http://localhost:8080/',
+  publicPath: '/dist',
   outputDir: '../web/dist',
   assetsDir: undefined,
   runtimeCompiler: undefined,

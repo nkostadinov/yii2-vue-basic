@@ -1,5 +1,7 @@
 RewriteEngine On RewriteBase /
 
+RewriteRule ^(dist)($|/) - [L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
