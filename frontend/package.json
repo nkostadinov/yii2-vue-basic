@@ -19,7 +19,7 @@
     "vue-toasted": "^1.1.28",
     "vuex": "^3.3.0",
     "webpack-manifest-plugin": "^2.2.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.3.1",
